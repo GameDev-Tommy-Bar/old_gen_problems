@@ -1,45 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class old_guy_move : MonoBehaviour
+public class OldGuyMove : MonoBehaviour
 {
-    Vector3 pos_up_down;
-    Vector3 pos_right_left;
-    [SerializeField] float speed = 10f;
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 posUpDown;
+    private Vector3 posRightLeft;
+    [SerializeField] private float speed = 10f;
+
+    private void Start()
     {
-        pos_up_down = new Vector3(0,0.1f,0);
-        pos_right_left = new Vector3(0.1f,0,0);
+        posUpDown = new Vector3(0f, 0.1f, 0f);
+        posRightLeft = new Vector3(0.1f, 0f, 0f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            GetComponent<Transform>().position += pos_up_down*speed*Time.deltaTime;
+            transform.position += posUpDown * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            GetComponent<Transform>().position -= pos_up_down*speed*Time.deltaTime;
-
+            transform.position -= posUpDown * speed * Time.deltaTime;
         }
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            GetComponent<Transform>().position += pos_right_left*speed*Time.deltaTime;
+            transform.position += posRightLeft * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-           GetComponent<Transform>().position -= pos_right_left*speed*Time.deltaTime;
+            transform.position -= posRightLeft * speed * Time.deltaTime;
         }
     }
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "kid"){
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("kid"))
+        {
             speed = 50f;
-        }   
+        }
     }
 }
