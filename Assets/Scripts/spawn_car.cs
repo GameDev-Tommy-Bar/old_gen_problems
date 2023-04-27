@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawn_car : MonoBehaviour
+public class SpawnCar : MonoBehaviour
 {
-    [SerializeField] GameObject car;
-    Vector3 positionOfSpawnedObject;
-    Quaternion rotationOfSpawnedObject = Quaternion.identity;
-    [SerializeField] float minDelay = 1f;
-    [SerializeField] float maxDelay = 2.5f;
+    [SerializeField] private GameObject car;
+    private Vector3 positionOfSpawnedObject;
+    private Quaternion rotationOfSpawnedObject = Quaternion.identity;
+    [SerializeField] private float minDelay = 1f;
+    [SerializeField] private float maxDelay = 2.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         positionOfSpawnedObject = transform.position;
-        StartCoroutine(SpawnCar());
+        StartCoroutine(SpawnCarCoroutine());
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class spawn_car : MonoBehaviour
         
     }
 
-    private IEnumerator SpawnCar()
+    private IEnumerator SpawnCarCoroutine()
     {
         while (true)
         {

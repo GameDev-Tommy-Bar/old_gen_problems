@@ -5,15 +5,14 @@ public class MoveCar : MonoBehaviour
     [SerializeField] private bool isMovingRight = true;
     [SerializeField] private float speed = 1f;
     
-    private Vector3 moveFactor;
+    private Vector3 moveFactor = new Vector3(0.1f, 0f, 0f);
 
     private void Start()
     {
         if (isMovingRight)
         {
-            transform.Rotate(new Vector3(0, 180, 0));
+            transform.Rotate(new Vector3(0f, 180f, 0f));
         }
-        moveFactor = new Vector3(0.1f, 0f, 0f);
     }
 
     private void Update()
@@ -23,13 +22,6 @@ public class MoveCar : MonoBehaviour
         //     speed = 0.1f;
         // }
         
-        if (isMovingRight)
-        {
-            transform.position += moveFactor * speed * Time.deltaTime;
-        }
-        else
-        {
-            transform.position -= moveFactor * speed * Time.deltaTime;
-        }
+        transform.position += moveFactor * (isMovingRight ? speed : -speed) * Time.deltaTime;
     }
 }
