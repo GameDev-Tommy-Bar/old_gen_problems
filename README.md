@@ -8,3 +8,7 @@
 ![pic](https://github.com/GameDev-Tommy-Bar/old_gen_problems/blob/292b63dabd18534f9b2496ab11941fd0098f3c25/element%20pics/Capture2.PNG)
 ![pic2](https://github.com/GameDev-Tommy-Bar/old_gen_problems/blob/292b63dabd18534f9b2496ab11941fd0098f3c25/element%20pics/Capture.PNG)
 #### [לעוד פרטים](https://github.com/GameDev-Tommy-Bar/old_gen_problems/blob/73e6a5549c2343f711e905b71aa73dfea627a590/elements.md)
+#### במשחק זה בנינו כביש ובו מכוניות שנוסעות בקצב מהר ומזדמנות באמצעות סקריפט spawn
+#### יש במשחק דמות המדמה איש מבוגר שהולך לאט מאוד ובנוסף דמות של ילד שמסתובב במפה
+#### במהלך פגישה בין הדמות המבוגרת והילד, הילד נהיה אובייקט בן של המבוגר ומהירותן משתנה
+#### וכך ניתן לחצות את הכביש בבטחה ולהגיע לצד השני
